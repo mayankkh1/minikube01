@@ -12,7 +12,8 @@ pipeline {
     
  stage('Deploy to Server') {
       steps{
-        
+       
+        sh "kubectl delete -k  ." 
         sh "kubectl apply -k  ."
    
            
