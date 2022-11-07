@@ -5,7 +5,7 @@ pipeline {
  stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/mayankkh1/dockerreactjs.git', branch: 'main'])
+        git([url: 'https://github.com/mayankkh1/minikube01.git', branch: 'main'])
  
       }
     }
