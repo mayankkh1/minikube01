@@ -29,13 +29,23 @@ stage('Deploy Image') {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("latest")
+            dockerImage.push("$BUILD_NUMBER")
             
           }
         }
       }
     }
-    
+
+stage('Deploy app') {
+            steps{
+                script {
+                    
+              
+                    kubernetesDeploy(configs: "nodeapp.yaml", kubeconfigId: "kubernetes", enableConfigSubstitution: "true")
+
+        }
+      } 
+   }
  stage('Deploy to Server') {
       steps{
         
