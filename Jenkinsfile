@@ -36,19 +36,10 @@ stage('Deploy Image') {
       }
     }
 
-stage('Deploy app') {
-            steps{
-                script {
-                    
-              
-                    kubernetesDeploy(configs: "nodeapp.yaml", kubeconfigId: "kubernetes", enableConfigSubstitution: "true")
-
-        }
-      } 
-   }
  stage('Deploy to Server') {
       steps{
         
+        kubernetesDeploy(configs: "nodeapp.yaml", kubeconfigId: "kubernetes", enableConfigSubstitution: "true")
         sh "kubectl apply -k ."
    
            
