@@ -39,7 +39,7 @@ stage('Deploy Image') {
  stage('Deploy to Server') {
       steps{
         
-        kubernetesDeploy(configs: "nodeapp.yaml", kubeconfigId: "kubernetes", enableConfigSubstitution: "true")
+        kubernetesDeploy(configs: "nodeapp.yaml", kubeconfigId: "minikube", enableConfigSubstitution: "true")
         sh "kubectl apply -k ."
    
            
