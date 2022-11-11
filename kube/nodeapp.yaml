@@ -13,7 +13,8 @@ spec:
     spec:
       containers:
         - name:  nodeapp
-          image: mak1993/nodeapp01:$BUILD_NUMBER
+          image: mak1993/nodeapp01:${BUILD_NUMBER}
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
