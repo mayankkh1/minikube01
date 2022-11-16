@@ -2,17 +2,20 @@ pipeline {
 
   agent any
  
+stages {
     
- stage('Deploy to Server') {
-      steps{
+           stage('Deploy to Server') {
+           steps{
         
-        sh "kubectl apply -k  /home/ubuntu/data/minikube01/. "
+                   sh "kubectl apply -k  /home/ubuntu/data/minikube01/. "
    
            
-      }  
-   }
+                }  
+           }
 
-}
+       } 
+
+}    
 
 
 
