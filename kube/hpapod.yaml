@@ -1,11 +1,7 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  creationTimestamp: "2022-11-02T07:27:14Z"
-  name: nodeapp
-  namespace: default
-  resourceVersion: "18574"
-  uid: ba05a8a0-3464-464f-90c5-dcf42537911c
+  name: nodeapphorizontal
 spec:
   maxReplicas: 4
   metrics:
