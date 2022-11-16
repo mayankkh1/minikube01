@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name:  nodeapp
-          image: mak1993/nodeapp01:32
+          image: mak1993/nodeapp01:latest
           ports:
             - containerPort: 3000
           env:
