@@ -29,7 +29,7 @@ stage('Deploy Image') {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("latest")
+            dockerImage.push("$BUILD_NUMBER")
             
           }
         }
@@ -39,7 +39,7 @@ stage('Deploy Image') {
  stage('Deploy to Server') {
       steps{
         
-        
+        sh "sed -i 's/nodeapp01:[0-9][0-9][0-9][0-9]/nodeapp01:$BUILD_NUMBER/g' kube/nodeapp.yaml" 
         sh "kubectl apply -k ."
    
            
