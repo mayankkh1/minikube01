@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   name: nodeappingress
 spec: 
-  ingressClassName: nginx
+#  ingressClassName: nginx
   rules:
-  - host: "mywebapp.org"
+  - host: "mayankwebsite.ml"
     http:
       paths:
-      - pathType: Prefix
-        path: /
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: nodeapp
             port: 
-              number: 8081
+              number: 8084
